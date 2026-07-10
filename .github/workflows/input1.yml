@@ -6,7 +6,13 @@ on:
         default: "test"
         description: "Project Environment"
         required: true
-        type: string
+        type: choice
+        options:
+          - test
+          - dev
+          - preprod
+          - uat
+          - xyz
 jobs:
     myjob:
       runs-on: self-hosted
