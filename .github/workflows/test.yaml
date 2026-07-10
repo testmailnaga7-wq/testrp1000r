@@ -11,18 +11,15 @@ jobs:
         steps:
            - name: Display Message on the screen
              run: echo "Good Morning"
-	displaymessage2:
-		needs:
-	      - displaymessage1
+    displaymessage2:
+        needs: displaymessage1
         runs-on: NAGA
         steps:
            - name: Display Message on the screen
              run: echo "Good Morning"
-	displaymessage3:
+    displaymessage3:
         runs-on: NAGA
-        needs:
-           - displaymessage1
-           - displaymessage2
+        needs: [displaymessage1,displaymessage2]
 
         steps:
            - name: Display Message on the screen
