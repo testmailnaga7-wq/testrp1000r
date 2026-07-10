@@ -1,0 +1,30 @@
+
+name: workflow1
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+    displaymessage1:
+        runs-on: NAGA
+        steps:
+           - name: Display Message on the screen
+             run: echo "Good Morning"
+	displaymessage2:
+		needs:
+	      - displaymessage1
+        runs-on: NAGA
+        steps:
+           - name: Display Message on the screen
+             run: echo "Good Morning"
+	displaymessage3:
+        runs-on: NAGA
+        needs:
+           - displaymessage1
+           - displaymessage2
+
+        steps:
+           - name: Display Message on the screen
+             run: echo "Good Morning"                          
+
