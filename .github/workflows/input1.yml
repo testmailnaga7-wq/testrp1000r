@@ -1,0 +1,15 @@
+name: withhelpofparameters
+on:
+  workflow_dispatch:
+    inputs:
+      typeofenv:
+        default: "test"
+        description: "Project Environment"
+        required: true
+        type: string
+jobs:
+    myjob:
+      runs-on: self-hosted
+      steps:
+        - name: displyvariablename
+          run: echo "Value of env is ${{ inputs.typeofenv }}"
