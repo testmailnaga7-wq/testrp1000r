@@ -7,18 +7,18 @@ on:
 
 jobs:
     displaymessage1:
-        runs-on: NAGA
+        runs-on: self-hosted
         steps:
            - name: Display Message on the screen
              run: echo "Good Morning"
     displaymessage2:
         needs: displaymessage1
-        runs-on: NAGA
+        runs-on: self-hosted
         steps:
            - name: Display Message on the screen
              run: echo "Good Morning"
     displaymessage3:
-        runs-on: NAGA
+        runs-on: self-hosted
         needs: [displaymessage1,displaymessage2]
 
         steps:
